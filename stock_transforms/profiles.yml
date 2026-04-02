@@ -1,0 +1,8 @@
+stock_transforms:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: /tmp/stock.duckdb
+      extensions:
+        - httpfs
