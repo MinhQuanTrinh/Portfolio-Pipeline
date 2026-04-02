@@ -3,6 +3,7 @@
 Project Structure:
 
 Portfolio-Pipeline/
+
     docker-compose.yml          | Defines all services — Airflow, MinIO, Postgres, Streamlit
     
     requirements-dbt.txt        | Python dependencies installed
