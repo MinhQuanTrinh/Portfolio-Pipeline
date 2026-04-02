@@ -4,10 +4,15 @@ Project Structure:
 
 Portfolio-Pipeline/
     docker-compose.yml          | Defines all services — Airflow, MinIO, Postgres, Streamlit
+    
     requirements-dbt.txt        | Python dependencies installed
+    
     requirements-airflow.txt    |
-    requirements-dashboard.txt  |
+    
+    requirements-dashboard.txt  | 
+    
     .env                        | Secret values kept out of source control: MinIO credentials, Airflow Fernet key, Postgres password. Referenced by docker-compose.yml via ${VAR} syntax.
+    
     README.md
 
     dags/
