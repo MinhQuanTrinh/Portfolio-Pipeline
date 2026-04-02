@@ -3,7 +3,7 @@ x-airflow-common: &airflow-common
   environment:
     AIRFLOW__CORE__EXECUTOR: LocalExecutor
     AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
-    AIRFLOW__CORE__FERNET_KEY: "46BKJoQYlPPOexq0OhDZnIlNepKFf87WFwLt0nIigo="
+    AIRFLOW__CORE__FERNET_KEY: "MrFAHNEAutg-WLgfbPq0m7sLcrVt7Tar2jb4ZDeZggw="
     AIRFLOW__CORE__LOAD_EXAMPLES: "false"
     AIRFLOW_CONN_MINIO_S3: >-
       aws://minioadmin:minioadmin@?endpoint_url=http%3A%2F%2Fminio%3A9000
@@ -31,12 +31,8 @@ services:
   airflow-init:
     <<: *airflow-common
     command: >
-      bash -c "pip install -r /requirements.txt &&
-               airflow db init &&
-               airflow users create
-                 --username admin --password admin
-                 --firstname Admin --lastname User
-                 --role Admin --email admin@example.com"
+      bash -c "pip install -r /requirements.txt && airflow db init &&
+      airflow users create --username admin --password admin --firstname Admin --lastname User --role Admin --email admin@example.com"
     restart: "no"
 
   airflow-webserver:
