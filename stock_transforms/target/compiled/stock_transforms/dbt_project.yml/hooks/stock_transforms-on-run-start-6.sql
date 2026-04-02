@@ -1,0 +1,1 @@
+SET s3_access_key_id='minioadmin'

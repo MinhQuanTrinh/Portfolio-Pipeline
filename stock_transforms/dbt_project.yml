@@ -20,9 +20,11 @@ on-run-start:
 
 models:
   stock_transforms:
+    # Ensure DuckDB/httpfs has S3 credentials available for every model.
+    # Some models may run in separate SQL connections/operations.
+    +pre-hook: "{{ set_minio_secrets() }}"
     staging:
       +materialized: view
-      +pre-hook: "{{ set_minio_secrets() }}"
     intermediate:
       +materialized: table
     marts:
