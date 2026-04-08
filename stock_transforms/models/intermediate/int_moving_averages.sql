@@ -1,5 +1,14 @@
 with base as (
-    select * from {{ ref('stg_prices') }}
+    select
+        ticker,
+        cast(date as date) as date,
+        open,
+        high,
+        low,
+        close,
+        volume,
+        ingested_at
+    from {{ ref('stg_prices') }}
 ),
 
 windowed as (

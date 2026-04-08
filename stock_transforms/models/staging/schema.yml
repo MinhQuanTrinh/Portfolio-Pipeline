@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_prices
+    columns:
+      - name: ticker
+        tests: [not_null]
+      - name: date
+        tests: [not_null]
+      - name: close
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 100000
+      - name: volume
+        tests: [not_null]
