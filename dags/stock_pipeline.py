@@ -99,3 +99,17 @@ with DAG(
             python_callable=fetch_and_store,
             op_kwargs={"ticker": _ticker, "ds": "{{ ds }}"},
         )
+
+# Add after your PythonOperator loop
+run_dbt = BashOperator(
+    task_id="run_dbt_transforms",
+    bash_command=(
+        "cd /opt/airflow/dags/../stock_transforms && "
+        "dbt run --profiles-dir /opt/airflow && "
+        "dbt test --profiles-dir /opt/airflow"
+    ),
+)
+
+# Set dependencies — dbt runs after all tickers are fetched
+fetch_tasks = [t for t in dag.tasks if t.task_id.startswith("fetch_")]
+fetch_tasks >> run_dbt
