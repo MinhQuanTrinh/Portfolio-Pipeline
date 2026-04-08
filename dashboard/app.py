@@ -34,7 +34,7 @@ def load_transformed_data(ticker: str) -> pd.DataFrame:
 
 # ── Sidebar
 st.sidebar.title("Controls")
-tickers = st.sidebar.selectbox("Select Ticker", ["LDX.AX", "4DX.AX", "PME.AX", "BXN.AX"])
+tickers = st.sidebar.selectbox("Select Ticker", ["LDX.AX", "4DX.AX", "PME.AX", "CU6.AX"])
 ma_options = st.sidebar.multiselect(
     "Moving averages",
     ["SMA 7", "SMA 21", "SMA 50"],
