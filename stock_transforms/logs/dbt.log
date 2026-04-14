@@ -11497,3 +11497,1307 @@ drop table if exists "stock"."main"."mart_dashboard__dbt_backup" cascade
 [0m02:22:40.250912 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2787f6d410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2787f6c810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2787f6d850>]}
 [0m02:22:40.251214 [debug] [MainThread]: Flushing usage events
 [0m02:22:41.406167 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m07:37:42.288359 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c5279421290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c52794217d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c527a1e8890>]}
+
+
+============================== 07:37:42.298864 | 833988cd-61d8-43ce-aef2-9e19f181bf7f ==============================
+[0m07:37:42.298864 [info ] [MainThread]: Running with dbt=1.11.7
+[0m07:37:42.299350 [debug] [MainThread]: running dbt with arguments {'indirect_selection': 'eager', 'quiet': 'True', 'debug': 'False', 'log_format': 'default', 'log_cache_events': 'False', 'empty': 'None', 'use_colors': 'True', 'invocation_command': 'dbt test -q', 'write_json': 'True', 'log_path': '/dbt/logs', 'partial_parse': 'True', 'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'warn_error': 'None', 'profiles_dir': '/dbt', 'printer_width': '80', 'introspect': 'True', 'static_parser': 'True', 'fail_fast': 'False', 'target_path': 'None', 'version_check': 'True', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m07:37:42.827699 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '833988cd-61d8-43ce-aef2-9e19f181bf7f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c52790e3310>]}
+[0m07:37:42.926691 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '833988cd-61d8-43ce-aef2-9e19f181bf7f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c527c266d90>]}
+[0m07:37:42.928187 [info ] [MainThread]: Registered adapter: duckdb=1.8.1
+[0m07:37:43.076379 [debug] [MainThread]: checksum: b80718358155fc17c3559352095564dd56ada1cc1a1c0ef2e62c857e71583775, vars: {}, profile: , target: , version: 1.11.7
+[0m07:37:43.280356 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m07:37:43.281269 [debug] [MainThread]: Partial parsing: added file: stock_transforms://models/staging/schema.yml
+[0m07:37:43.533240 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `dbt_utils.accepted_range` defined on
+'stg_prices' in package 'stock_transforms' (models/staging/schema.yml).
+Arguments to generic tests should be nested under the `arguments` property.
+[0m07:37:43.533853 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '833988cd-61d8-43ce-aef2-9e19f181bf7f', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c5270e44d90>]}
+[0m07:37:43.740257 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '833988cd-61d8-43ce-aef2-9e19f181bf7f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c5270e1e010>]}
+[0m07:37:43.871451 [debug] [MainThread]: Wrote artifact WritableManifest to /dbt/target/manifest.json
+[0m07:37:43.874691 [debug] [MainThread]: Wrote artifact SemanticManifest to /dbt/target/semantic_manifest.json
+[0m07:37:44.006999 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '833988cd-61d8-43ce-aef2-9e19f181bf7f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c5271398ed0>]}
+[0m07:37:44.008169 [info ] [MainThread]: Found 3 models, 8 operations, 5 data tests, 457 macros
+[0m07:37:44.008773 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '833988cd-61d8-43ce-aef2-9e19f181bf7f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c5270e38690>]}
+[0m07:37:44.021943 [info ] [MainThread]: 
+[0m07:37:44.023093 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m07:37:44.023794 [info ] [MainThread]: 
+[0m07:37:44.024597 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m07:37:44.043708 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_stock_main'
+[0m07:37:44.160908 [debug] [ThreadPool]: Using duckdb connection "list_stock_main"
+[0m07:37:44.161416 [debug] [ThreadPool]: On list_stock_main: BEGIN
+[0m07:37:44.161771 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:37:44.287362 [debug] [ThreadPool]: SQL status: OK in 0.125 seconds
+[0m07:37:44.288091 [debug] [ThreadPool]: Using duckdb connection "list_stock_main"
+[0m07:37:44.288631 [debug] [ThreadPool]: On list_stock_main: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "list_stock_main"} */
+select
+      'stock' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main'
+    and table_catalog = 'stock'
+  
+[0m07:37:44.310721 [debug] [ThreadPool]: SQL status: OK in 0.021 seconds
+[0m07:37:44.313568 [debug] [ThreadPool]: On list_stock_main: ROLLBACK
+[0m07:37:44.315078 [debug] [ThreadPool]: Failed to rollback 'list_stock_main'
+[0m07:37:44.315469 [debug] [ThreadPool]: On list_stock_main: Close
+[0m07:37:44.321346 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '833988cd-61d8-43ce-aef2-9e19f181bf7f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c5270e3b210>]}
+[0m07:37:44.322120 [debug] [MainThread]: Using duckdb connection "master"
+[0m07:37:44.322487 [debug] [MainThread]: On master: BEGIN
+[0m07:37:44.322772 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m07:37:44.387498 [debug] [MainThread]: SQL status: OK in 0.065 seconds
+[0m07:37:44.388592 [debug] [MainThread]: On master: COMMIT
+[0m07:37:44.389025 [debug] [MainThread]: Using duckdb connection "master"
+[0m07:37:44.389358 [debug] [MainThread]: On master: COMMIT
+[0m07:37:44.390265 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m07:37:44.397354 [debug] [MainThread]: Writing injected SQL for node "operation.stock_transforms.stock_transforms-on-run-start-0"
+[0m07:37:44.403664 [info ] [MainThread]: 1 of 8 START hook: stock_transforms.on-run-start.0 ............................. [RUN]
+[0m07:37:44.404398 [debug] [MainThread]: Using duckdb connection "master"
+[0m07:37:44.404880 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "master"} */
+INSTALL httpfs
+[0m07:37:44.406352 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m07:37:44.407395 [info ] [MainThread]: 1 of 8 OK hook: stock_transforms.on-run-start.0 ................................ [[32mOK[0m in 0.02s]
+[0m07:37:44.409420 [debug] [MainThread]: Writing injected SQL for node "operation.stock_transforms.stock_transforms-on-run-start-1"
+[0m07:37:44.410321 [info ] [MainThread]: 2 of 8 START hook: stock_transforms.on-run-start.1 ............................. [RUN]
+[0m07:37:44.410719 [debug] [MainThread]: Using duckdb connection "master"
+[0m07:37:44.411037 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "master"} */
+LOAD httpfs
+[0m07:37:44.412272 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m07:37:44.413526 [info ] [MainThread]: 2 of 8 OK hook: stock_transforms.on-run-start.1 ................................ [[32mOK[0m in 0.01s]
+[0m07:37:44.415312 [debug] [MainThread]: Writing injected SQL for node "operation.stock_transforms.stock_transforms-on-run-start-2"
+[0m07:37:44.416144 [info ] [MainThread]: 3 of 8 START hook: stock_transforms.on-run-start.2 ............................. [RUN]
+[0m07:37:44.416644 [debug] [MainThread]: Using duckdb connection "master"
+[0m07:37:44.417175 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "master"} */
+SET s3_region='us-east-1'
+[0m07:37:44.419243 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m07:37:44.420837 [info ] [MainThread]: 3 of 8 OK hook: stock_transforms.on-run-start.2 ................................ [[32mOK[0m in 0.01s]
+[0m07:37:44.422867 [debug] [MainThread]: Writing injected SQL for node "operation.stock_transforms.stock_transforms-on-run-start-3"
+[0m07:37:44.423728 [info ] [MainThread]: 4 of 8 START hook: stock_transforms.on-run-start.3 ............................. [RUN]
+[0m07:37:44.424145 [debug] [MainThread]: Using duckdb connection "master"
+[0m07:37:44.424486 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "master"} */
+SET s3_url_style='path'
+[0m07:37:44.425554 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m07:37:44.426481 [info ] [MainThread]: 4 of 8 OK hook: stock_transforms.on-run-start.3 ................................ [[32mOK[0m in 0.01s]
+[0m07:37:44.428565 [debug] [MainThread]: Writing injected SQL for node "operation.stock_transforms.stock_transforms-on-run-start-4"
+[0m07:37:44.429434 [info ] [MainThread]: 5 of 8 START hook: stock_transforms.on-run-start.4 ............................. [RUN]
+[0m07:37:44.429845 [debug] [MainThread]: Using duckdb connection "master"
+[0m07:37:44.430185 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "master"} */
+SET s3_endpoint='minio:9000'
+[0m07:37:44.431052 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m07:37:44.431990 [info ] [MainThread]: 5 of 8 OK hook: stock_transforms.on-run-start.4 ................................ [[32mOK[0m in 0.01s]
+[0m07:37:44.434847 [debug] [MainThread]: Writing injected SQL for node "operation.stock_transforms.stock_transforms-on-run-start-5"
+[0m07:37:44.436611 [info ] [MainThread]: 6 of 8 START hook: stock_transforms.on-run-start.5 ............................. [RUN]
+[0m07:37:44.437331 [debug] [MainThread]: Using duckdb connection "master"
+[0m07:37:44.437848 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "master"} */
+SET s3_use_ssl=false
+[0m07:37:44.440332 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m07:37:44.441600 [info ] [MainThread]: 6 of 8 OK hook: stock_transforms.on-run-start.5 ................................ [[32mOK[0m in 0.01s]
+[0m07:37:44.444666 [debug] [MainThread]: Writing injected SQL for node "operation.stock_transforms.stock_transforms-on-run-start-6"
+[0m07:37:44.445732 [info ] [MainThread]: 7 of 8 START hook: stock_transforms.on-run-start.6 ............................. [RUN]
+[0m07:37:44.447417 [debug] [MainThread]: Using duckdb connection "master"
+[0m07:37:44.448145 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "master"} */
+SET s3_access_key_id='minioadmin'
+[0m07:37:44.449569 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m07:37:44.451180 [info ] [MainThread]: 7 of 8 OK hook: stock_transforms.on-run-start.6 ................................ [[32mOK[0m in 0.01s]
+[0m07:37:44.454319 [debug] [MainThread]: Writing injected SQL for node "operation.stock_transforms.stock_transforms-on-run-start-7"
+[0m07:37:44.455775 [info ] [MainThread]: 8 of 8 START hook: stock_transforms.on-run-start.7 ............................. [RUN]
+[0m07:37:44.456499 [debug] [MainThread]: Using duckdb connection "master"
+[0m07:37:44.457088 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "master"} */
+SET s3_secret_access_key='minioadmin'
+[0m07:37:44.458334 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m07:37:44.460907 [info ] [MainThread]: 8 of 8 OK hook: stock_transforms.on-run-start.7 ................................ [[32mOK[0m in 0.01s]
+[0m07:37:44.462511 [info ] [MainThread]: 
+[0m07:37:44.465809 [debug] [MainThread]: On master: Close
+[0m07:37:44.476869 [debug] [Thread-1 (]: Began running node test.stock_transforms.dbt_utils_accepted_range_stg_prices_close__100000__0.0b95a53831
+[0m07:37:44.477516 [info ] [Thread-1 (]: 1 of 5 START test dbt_utils_accepted_range_stg_prices_close__100000__0 ......... [RUN]
+[0m07:37:44.478176 [debug] [Thread-1 (]: Acquiring new duckdb connection 'test.stock_transforms.dbt_utils_accepted_range_stg_prices_close__100000__0.0b95a53831'
+[0m07:37:44.478682 [debug] [Thread-1 (]: Began compiling node test.stock_transforms.dbt_utils_accepted_range_stg_prices_close__100000__0.0b95a53831
+[0m07:37:44.499417 [debug] [Thread-1 (]: Compilation Error in test dbt_utils_accepted_range_stg_prices_close__100000__0 (models/staging/schema.yml)
+  'dbt_utils' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m07:37:44.500556 [error] [Thread-1 (]: 1 of 5 ERROR dbt_utils_accepted_range_stg_prices_close__100000__0 .............. [[31mERROR[0m in 0.02s]
+[0m07:37:44.501556 [debug] [Thread-1 (]: Finished running node test.stock_transforms.dbt_utils_accepted_range_stg_prices_close__100000__0.0b95a53831
+[0m07:37:44.502276 [debug] [Thread-1 (]: Began running node test.stock_transforms.not_null_stg_prices_close.66a8d2ac2c
+[0m07:37:44.502973 [debug] [Thread-4 (]: Marking all children of 'test.stock_transforms.dbt_utils_accepted_range_stg_prices_close__100000__0.0b95a53831' to be skipped because of status 'error'.  Reason: Compilation Error in test dbt_utils_accepted_range_stg_prices_close__100000__0 (models/staging/schema.yml)
+  'dbt_utils' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps"..
+[0m07:37:44.504029 [info ] [Thread-1 (]: 2 of 5 START test not_null_stg_prices_close .................................... [RUN]
+[0m07:37:44.506128 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_transforms.dbt_utils_accepted_range_stg_prices_close__100000__0.0b95a53831, now test.stock_transforms.not_null_stg_prices_close.66a8d2ac2c)
+[0m07:37:44.514101 [debug] [Thread-1 (]: Began compiling node test.stock_transforms.not_null_stg_prices_close.66a8d2ac2c
+[0m07:37:44.550590 [debug] [Thread-1 (]: Writing injected SQL for node "test.stock_transforms.not_null_stg_prices_close.66a8d2ac2c"
+[0m07:37:44.563652 [debug] [Thread-1 (]: Began executing node test.stock_transforms.not_null_stg_prices_close.66a8d2ac2c
+[0m07:37:44.678187 [debug] [Thread-1 (]: Writing runtime sql for node "test.stock_transforms.not_null_stg_prices_close.66a8d2ac2c"
+[0m07:37:44.680938 [debug] [Thread-1 (]: Using duckdb connection "test.stock_transforms.not_null_stg_prices_close.66a8d2ac2c"
+[0m07:37:44.681708 [debug] [Thread-1 (]: On test.stock_transforms.not_null_stg_prices_close.66a8d2ac2c: BEGIN
+[0m07:37:44.682314 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m07:37:44.817273 [debug] [Thread-1 (]: SQL status: OK in 0.135 seconds
+[0m07:37:44.818053 [debug] [Thread-1 (]: Using duckdb connection "test.stock_transforms.not_null_stg_prices_close.66a8d2ac2c"
+[0m07:37:44.818732 [debug] [Thread-1 (]: On test.stock_transforms.not_null_stg_prices_close.66a8d2ac2c: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "stock_transforms", "target_name": "dev", "node_id": "test.stock_transforms.not_null_stg_prices_close.66a8d2ac2c"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select close
+from "stock"."main"."stg_prices"
+where close is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m07:37:44.838283 [debug] [Thread-1 (]: SQL status: OK in 0.019 seconds
+[0m07:37:44.849190 [debug] [Thread-1 (]: On test.stock_transforms.not_null_stg_prices_close.66a8d2ac2c: ROLLBACK
+[0m07:37:44.850467 [debug] [Thread-1 (]: Failed to rollback 'test.stock_transforms.not_null_stg_prices_close.66a8d2ac2c'
+[0m07:37:44.851695 [debug] [Thread-1 (]: On test.stock_transforms.not_null_stg_prices_close.66a8d2ac2c: Close
+[0m07:37:44.865269 [info ] [Thread-1 (]: 2 of 5 PASS not_null_stg_prices_close .......................................... [[32mPASS[0m in 0.36s]
+[0m07:37:44.866473 [debug] [Thread-1 (]: Finished running node test.stock_transforms.not_null_stg_prices_close.66a8d2ac2c
+[0m07:37:44.867355 [debug] [Thread-1 (]: Began running node test.stock_transforms.not_null_stg_prices_date.e2075c925d
+[0m07:37:44.868359 [info ] [Thread-1 (]: 3 of 5 START test not_null_stg_prices_date ..................................... [RUN]
+[0m07:37:44.869269 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_transforms.not_null_stg_prices_close.66a8d2ac2c, now test.stock_transforms.not_null_stg_prices_date.e2075c925d)
+[0m07:37:44.869920 [debug] [Thread-1 (]: Began compiling node test.stock_transforms.not_null_stg_prices_date.e2075c925d
+[0m07:37:44.878154 [debug] [Thread-1 (]: Writing injected SQL for node "test.stock_transforms.not_null_stg_prices_date.e2075c925d"
+[0m07:37:44.879343 [debug] [Thread-1 (]: Began executing node test.stock_transforms.not_null_stg_prices_date.e2075c925d
+[0m07:37:44.884506 [debug] [Thread-1 (]: Writing runtime sql for node "test.stock_transforms.not_null_stg_prices_date.e2075c925d"
+[0m07:37:44.885584 [debug] [Thread-1 (]: Using duckdb connection "test.stock_transforms.not_null_stg_prices_date.e2075c925d"
+[0m07:37:44.886043 [debug] [Thread-1 (]: On test.stock_transforms.not_null_stg_prices_date.e2075c925d: BEGIN
+[0m07:37:44.886455 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m07:37:44.968133 [debug] [Thread-1 (]: SQL status: OK in 0.081 seconds
+[0m07:37:44.969728 [debug] [Thread-1 (]: Using duckdb connection "test.stock_transforms.not_null_stg_prices_date.e2075c925d"
+[0m07:37:44.970410 [debug] [Thread-1 (]: On test.stock_transforms.not_null_stg_prices_date.e2075c925d: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "stock_transforms", "target_name": "dev", "node_id": "test.stock_transforms.not_null_stg_prices_date.e2075c925d"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select date
+from "stock"."main"."stg_prices"
+where date is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m07:37:44.973818 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m07:37:44.976967 [debug] [Thread-1 (]: On test.stock_transforms.not_null_stg_prices_date.e2075c925d: ROLLBACK
+[0m07:37:44.977999 [debug] [Thread-1 (]: Failed to rollback 'test.stock_transforms.not_null_stg_prices_date.e2075c925d'
+[0m07:37:44.978620 [debug] [Thread-1 (]: On test.stock_transforms.not_null_stg_prices_date.e2075c925d: Close
+[0m07:37:44.983327 [info ] [Thread-1 (]: 3 of 5 PASS not_null_stg_prices_date ........................................... [[32mPASS[0m in 0.11s]
+[0m07:37:44.986218 [debug] [Thread-1 (]: Finished running node test.stock_transforms.not_null_stg_prices_date.e2075c925d
+[0m07:37:44.987206 [debug] [Thread-1 (]: Began running node test.stock_transforms.not_null_stg_prices_ticker.db7fe9d126
+[0m07:37:44.988431 [info ] [Thread-1 (]: 4 of 5 START test not_null_stg_prices_ticker ................................... [RUN]
+[0m07:37:44.989643 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_transforms.not_null_stg_prices_date.e2075c925d, now test.stock_transforms.not_null_stg_prices_ticker.db7fe9d126)
+[0m07:37:44.990790 [debug] [Thread-1 (]: Began compiling node test.stock_transforms.not_null_stg_prices_ticker.db7fe9d126
+[0m07:37:44.998127 [debug] [Thread-1 (]: Writing injected SQL for node "test.stock_transforms.not_null_stg_prices_ticker.db7fe9d126"
+[0m07:37:44.999061 [debug] [Thread-1 (]: Began executing node test.stock_transforms.not_null_stg_prices_ticker.db7fe9d126
+[0m07:37:45.001791 [debug] [Thread-1 (]: Writing runtime sql for node "test.stock_transforms.not_null_stg_prices_ticker.db7fe9d126"
+[0m07:37:45.002641 [debug] [Thread-1 (]: Using duckdb connection "test.stock_transforms.not_null_stg_prices_ticker.db7fe9d126"
+[0m07:37:45.003105 [debug] [Thread-1 (]: On test.stock_transforms.not_null_stg_prices_ticker.db7fe9d126: BEGIN
+[0m07:37:45.003491 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m07:37:45.081460 [debug] [Thread-1 (]: SQL status: OK in 0.078 seconds
+[0m07:37:45.083226 [debug] [Thread-1 (]: Using duckdb connection "test.stock_transforms.not_null_stg_prices_ticker.db7fe9d126"
+[0m07:37:45.084208 [debug] [Thread-1 (]: On test.stock_transforms.not_null_stg_prices_ticker.db7fe9d126: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "stock_transforms", "target_name": "dev", "node_id": "test.stock_transforms.not_null_stg_prices_ticker.db7fe9d126"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select ticker
+from "stock"."main"."stg_prices"
+where ticker is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m07:37:45.087264 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m07:37:45.090471 [debug] [Thread-1 (]: On test.stock_transforms.not_null_stg_prices_ticker.db7fe9d126: ROLLBACK
+[0m07:37:45.091856 [debug] [Thread-1 (]: Failed to rollback 'test.stock_transforms.not_null_stg_prices_ticker.db7fe9d126'
+[0m07:37:45.092566 [debug] [Thread-1 (]: On test.stock_transforms.not_null_stg_prices_ticker.db7fe9d126: Close
+[0m07:37:45.097723 [info ] [Thread-1 (]: 4 of 5 PASS not_null_stg_prices_ticker ......................................... [[32mPASS[0m in 0.11s]
+[0m07:37:45.099048 [debug] [Thread-1 (]: Finished running node test.stock_transforms.not_null_stg_prices_ticker.db7fe9d126
+[0m07:37:45.099911 [debug] [Thread-1 (]: Began running node test.stock_transforms.not_null_stg_prices_volume.2cf78d7f5c
+[0m07:37:45.100569 [info ] [Thread-1 (]: 5 of 5 START test not_null_stg_prices_volume ................................... [RUN]
+[0m07:37:45.101142 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_transforms.not_null_stg_prices_ticker.db7fe9d126, now test.stock_transforms.not_null_stg_prices_volume.2cf78d7f5c)
+[0m07:37:45.101549 [debug] [Thread-1 (]: Began compiling node test.stock_transforms.not_null_stg_prices_volume.2cf78d7f5c
+[0m07:37:45.111397 [debug] [Thread-1 (]: Writing injected SQL for node "test.stock_transforms.not_null_stg_prices_volume.2cf78d7f5c"
+[0m07:37:45.112590 [debug] [Thread-1 (]: Began executing node test.stock_transforms.not_null_stg_prices_volume.2cf78d7f5c
+[0m07:37:45.117016 [debug] [Thread-1 (]: Writing runtime sql for node "test.stock_transforms.not_null_stg_prices_volume.2cf78d7f5c"
+[0m07:37:45.118756 [debug] [Thread-1 (]: Using duckdb connection "test.stock_transforms.not_null_stg_prices_volume.2cf78d7f5c"
+[0m07:37:45.119317 [debug] [Thread-1 (]: On test.stock_transforms.not_null_stg_prices_volume.2cf78d7f5c: BEGIN
+[0m07:37:45.120106 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m07:37:45.193940 [debug] [Thread-1 (]: SQL status: OK in 0.074 seconds
+[0m07:37:45.194624 [debug] [Thread-1 (]: Using duckdb connection "test.stock_transforms.not_null_stg_prices_volume.2cf78d7f5c"
+[0m07:37:45.195063 [debug] [Thread-1 (]: On test.stock_transforms.not_null_stg_prices_volume.2cf78d7f5c: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "stock_transforms", "target_name": "dev", "node_id": "test.stock_transforms.not_null_stg_prices_volume.2cf78d7f5c"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select volume
+from "stock"."main"."stg_prices"
+where volume is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m07:37:45.197092 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m07:37:45.199175 [debug] [Thread-1 (]: On test.stock_transforms.not_null_stg_prices_volume.2cf78d7f5c: ROLLBACK
+[0m07:37:45.200073 [debug] [Thread-1 (]: Failed to rollback 'test.stock_transforms.not_null_stg_prices_volume.2cf78d7f5c'
+[0m07:37:45.200476 [debug] [Thread-1 (]: On test.stock_transforms.not_null_stg_prices_volume.2cf78d7f5c: Close
+[0m07:37:45.204196 [info ] [Thread-1 (]: 5 of 5 PASS not_null_stg_prices_volume ......................................... [[32mPASS[0m in 0.10s]
+[0m07:37:45.204969 [debug] [Thread-1 (]: Finished running node test.stock_transforms.not_null_stg_prices_volume.2cf78d7f5c
+[0m07:37:45.207864 [debug] [MainThread]: Using duckdb connection "master"
+[0m07:37:45.208587 [debug] [MainThread]: On master: BEGIN
+[0m07:37:45.209114 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m07:37:45.273158 [debug] [MainThread]: SQL status: OK in 0.064 seconds
+[0m07:37:45.273884 [debug] [MainThread]: On master: COMMIT
+[0m07:37:45.274493 [debug] [MainThread]: Using duckdb connection "master"
+[0m07:37:45.275017 [debug] [MainThread]: On master: COMMIT
+[0m07:37:45.276534 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m07:37:45.281409 [debug] [MainThread]: On master: Close
+[0m07:37:45.284930 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m07:37:45.285549 [debug] [MainThread]: Connection 'list_stock_main' was properly closed.
+[0m07:37:45.286125 [debug] [MainThread]: Connection 'test.stock_transforms.not_null_stg_prices_volume.2cf78d7f5c' was properly closed.
+[0m07:37:45.286712 [info ] [MainThread]: 
+[0m07:37:45.287142 [info ] [MainThread]: Finished running 8 project hooks, 5 data tests in 0 hours 0 minutes and 1.26 seconds (1.26s).
+[0m07:37:45.289510 [debug] [MainThread]: Command end result
+[0m07:37:45.337384 [debug] [MainThread]: Wrote artifact WritableManifest to /dbt/target/manifest.json
+[0m07:37:45.345552 [debug] [MainThread]: Wrote artifact SemanticManifest to /dbt/target/semantic_manifest.json
+[0m07:37:45.368155 [debug] [MainThread]: Wrote artifact RunExecutionResult to /dbt/target/run_results.json
+[0m07:37:45.368816 [info ] [MainThread]: 
+[0m07:37:45.369276 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m07:37:45.369689 [info ] [MainThread]: 
+[0m07:37:45.370182 [error] [MainThread]: [31mFailure in test dbt_utils_accepted_range_stg_prices_close__100000__0 (models/staging/schema.yml)[0m
+[0m07:37:45.370854 [error] [MainThread]:   Compilation Error in test dbt_utils_accepted_range_stg_prices_close__100000__0 (models/staging/schema.yml)
+  'dbt_utils' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m07:37:45.371401 [info ] [MainThread]: 
+[0m07:37:45.371950 [info ] [MainThread]: Done. PASS=12 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=13
+[0m07:37:45.372847 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m07:37:45.376398 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 3.149115, "process_in_blocks": "2160", "process_kernel_time": 2.117963, "process_mem_max_rss": "164288", "process_out_blocks": "3104", "process_user_time": 6.146168}
+[0m07:37:45.377415 [debug] [MainThread]: Command `dbt test` failed at 07:37:45.377177 after 3.15 seconds
+[0m07:37:45.378121 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c5279279e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c527927add0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c527927bbd0>]}
+[0m07:37:45.378838 [debug] [MainThread]: Flushing usage events
+[0m07:37:46.708895 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m03:13:57.437981 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a191a543310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a191b507710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a191a59fe50>]}
+
+
+============================== 03:13:57.446154 | 09ff2d8b-4bca-4f85-9341-4bac7f844b86 ==============================
+[0m03:13:57.446154 [info ] [MainThread]: Running with dbt=1.11.8
+[0m03:13:57.446864 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'invocation_command': 'dbt run', 'empty': 'False', 'cache_selected_only': 'False', 'log_path': '/dbt/logs', 'write_json': 'True', 'fail_fast': 'False', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'debug': 'False', 'log_format': 'default', 'indirect_selection': 'eager', 'printer_width': '80', 'introspect': 'True', 'partial_parse': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'no_print': 'None', 'version_check': 'True', 'warn_error': 'None', 'profiles_dir': '/dbt', 'use_colors': 'True', 'quiet': 'False'}
+[0m03:13:57.723612 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '09ff2d8b-4bca-4f85-9341-4bac7f844b86', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a191a4f3510>]}
+[0m03:13:57.806021 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '09ff2d8b-4bca-4f85-9341-4bac7f844b86', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a191d66ec10>]}
+[0m03:13:57.806990 [info ] [MainThread]: Registered adapter: duckdb=1.8.1
+[0m03:13:57.901353 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m03:13:58.047198 [info ] [MainThread]: Unable to do partial parsing because of a version mismatch
+[0m03:13:58.047998 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '09ff2d8b-4bca-4f85-9341-4bac7f844b86', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a191b66cc90>]}
+[0m03:13:59.391272 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `dbt_utils.accepted_range` defined on
+'stg_prices' in package 'stock_transforms' (models/staging/schema.yml).
+Arguments to generic tests should be nested under the `arguments` property.
+[0m03:13:59.392217 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '09ff2d8b-4bca-4f85-9341-4bac7f844b86', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a1911007f90>]}
+[0m03:13:59.533543 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '09ff2d8b-4bca-4f85-9341-4bac7f844b86', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a19111a6750>]}
+[0m03:13:59.661260 [debug] [MainThread]: Wrote artifact WritableManifest to /dbt/target/manifest.json
+[0m03:13:59.664544 [debug] [MainThread]: Wrote artifact SemanticManifest to /dbt/target/semantic_manifest.json
+[0m03:13:59.683385 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '09ff2d8b-4bca-4f85-9341-4bac7f844b86', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a1911025f90>]}
+[0m03:13:59.684015 [info ] [MainThread]: Found 3 models, 8 operations, 5 data tests, 457 macros
+[0m03:13:59.684435 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '09ff2d8b-4bca-4f85-9341-4bac7f844b86', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a191a40fb90>]}
+[0m03:13:59.686976 [info ] [MainThread]: 
+[0m03:13:59.687520 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m03:13:59.688060 [info ] [MainThread]: 
+[0m03:13:59.688801 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m03:13:59.696825 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_stock'
+[0m03:13:59.863018 [debug] [ThreadPool]: Using duckdb connection "list_stock"
+[0m03:13:59.863572 [debug] [ThreadPool]: On list_stock: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "list_stock"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where catalog_name = '"stock"'
+    
+  
+  
+[0m03:13:59.863908 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:14:02.216677 [debug] [ThreadPool]: SQL status: OK in 2.353 seconds
+[0m03:14:02.218326 [debug] [ThreadPool]: On list_stock: Close
+[0m03:14:02.221856 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_stock, now create_stock_main)
+[0m03:14:02.222491 [debug] [ThreadPool]: Creating schema "database: "stock"
+schema: "main"
+"
+[0m03:14:02.230239 [debug] [ThreadPool]: Using duckdb connection "create_stock_main"
+[0m03:14:02.230703 [debug] [ThreadPool]: On create_stock_main: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "create_stock_main"} */
+
+    
+        select type from duckdb_databases()
+        where database_name='stock'
+        and type='sqlite'
+    
+  
+[0m03:14:02.231001 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m03:14:02.287520 [debug] [ThreadPool]: SQL status: OK in 0.056 seconds
+[0m03:14:02.289360 [debug] [ThreadPool]: Using duckdb connection "create_stock_main"
+[0m03:14:02.289871 [debug] [ThreadPool]: On create_stock_main: BEGIN
+[0m03:14:02.290769 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m03:14:02.291164 [debug] [ThreadPool]: Using duckdb connection "create_stock_main"
+[0m03:14:02.291487 [debug] [ThreadPool]: On create_stock_main: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "create_stock_main"} */
+
+    
+    
+        create schema if not exists "stock"."main"
+    
+[0m03:14:02.292410 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m03:14:02.293334 [debug] [ThreadPool]: On create_stock_main: COMMIT
+[0m03:14:02.293835 [debug] [ThreadPool]: Using duckdb connection "create_stock_main"
+[0m03:14:02.294251 [debug] [ThreadPool]: On create_stock_main: COMMIT
+[0m03:14:02.295695 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m03:14:02.296265 [debug] [ThreadPool]: On create_stock_main: Close
+[0m03:14:02.301380 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_stock_main, now list_stock_main)
+[0m03:14:02.309445 [debug] [ThreadPool]: Using duckdb connection "list_stock_main"
+[0m03:14:02.310048 [debug] [ThreadPool]: On list_stock_main: BEGIN
+[0m03:14:02.310362 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m03:14:02.365607 [debug] [ThreadPool]: SQL status: OK in 0.055 seconds
+[0m03:14:02.366271 [debug] [ThreadPool]: Using duckdb connection "list_stock_main"
+[0m03:14:02.366759 [debug] [ThreadPool]: On list_stock_main: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "list_stock_main"} */
+select
+      'stock' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main'
+    and table_catalog = 'stock'
+  
+[0m03:14:02.372269 [debug] [ThreadPool]: SQL status: OK in 0.005 seconds
+[0m03:14:02.373878 [debug] [ThreadPool]: On list_stock_main: ROLLBACK
+[0m03:14:02.374651 [debug] [ThreadPool]: Failed to rollback 'list_stock_main'
+[0m03:14:02.374957 [debug] [ThreadPool]: On list_stock_main: Close
+[0m03:14:02.379106 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '09ff2d8b-4bca-4f85-9341-4bac7f844b86', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a1910f1e1d0>]}
+[0m03:14:02.379862 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:14:02.380228 [debug] [MainThread]: On master: BEGIN
+[0m03:14:02.380526 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m03:14:02.431821 [debug] [MainThread]: SQL status: OK in 0.051 seconds
+[0m03:14:02.432638 [debug] [MainThread]: On master: COMMIT
+[0m03:14:02.432959 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:14:02.433240 [debug] [MainThread]: On master: COMMIT
+[0m03:14:02.434111 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m03:14:02.444246 [debug] [MainThread]: Writing injected SQL for node "operation.stock_transforms.stock_transforms-on-run-start-0"
+[0m03:14:02.449148 [info ] [MainThread]: 1 of 8 START hook: stock_transforms.on-run-start.0 ............................. [RUN]
+[0m03:14:02.450012 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:14:02.450531 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "master"} */
+INSTALL httpfs
+[0m03:14:02.452023 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m03:14:02.453331 [info ] [MainThread]: 1 of 8 OK hook: stock_transforms.on-run-start.0 ................................ [[32mOK[0m in 0.02s]
+[0m03:14:02.455954 [debug] [MainThread]: Writing injected SQL for node "operation.stock_transforms.stock_transforms-on-run-start-1"
+[0m03:14:02.456879 [info ] [MainThread]: 2 of 8 START hook: stock_transforms.on-run-start.1 ............................. [RUN]
+[0m03:14:02.457440 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:14:02.457952 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "master"} */
+LOAD httpfs
+[0m03:14:02.459848 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m03:14:02.462521 [info ] [MainThread]: 2 of 8 OK hook: stock_transforms.on-run-start.1 ................................ [[32mOK[0m in 0.01s]
+[0m03:14:02.465929 [debug] [MainThread]: Writing injected SQL for node "operation.stock_transforms.stock_transforms-on-run-start-2"
+[0m03:14:02.467082 [info ] [MainThread]: 3 of 8 START hook: stock_transforms.on-run-start.2 ............................. [RUN]
+[0m03:14:02.467832 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:14:02.468379 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "master"} */
+SET s3_region='us-east-1'
+[0m03:14:02.469778 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m03:14:02.472552 [info ] [MainThread]: 3 of 8 OK hook: stock_transforms.on-run-start.2 ................................ [[32mOK[0m in 0.01s]
+[0m03:14:02.479497 [debug] [MainThread]: Writing injected SQL for node "operation.stock_transforms.stock_transforms-on-run-start-3"
+[0m03:14:02.481190 [info ] [MainThread]: 4 of 8 START hook: stock_transforms.on-run-start.3 ............................. [RUN]
+[0m03:14:02.482091 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:14:02.482814 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "master"} */
+SET s3_url_style='path'
+[0m03:14:02.484540 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m03:14:02.486517 [info ] [MainThread]: 4 of 8 OK hook: stock_transforms.on-run-start.3 ................................ [[32mOK[0m in 0.01s]
+[0m03:14:02.491820 [debug] [MainThread]: Writing injected SQL for node "operation.stock_transforms.stock_transforms-on-run-start-4"
+[0m03:14:02.493867 [info ] [MainThread]: 5 of 8 START hook: stock_transforms.on-run-start.4 ............................. [RUN]
+[0m03:14:02.496701 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:14:02.497746 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "master"} */
+SET s3_endpoint='minio:9000'
+[0m03:14:02.500309 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m03:14:02.503561 [info ] [MainThread]: 5 of 8 OK hook: stock_transforms.on-run-start.4 ................................ [[32mOK[0m in 0.02s]
+[0m03:14:02.509030 [debug] [MainThread]: Writing injected SQL for node "operation.stock_transforms.stock_transforms-on-run-start-5"
+[0m03:14:02.510898 [info ] [MainThread]: 6 of 8 START hook: stock_transforms.on-run-start.5 ............................. [RUN]
+[0m03:14:02.511853 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:14:02.522462 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "master"} */
+SET s3_use_ssl=false
+[0m03:14:02.524840 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m03:14:02.526933 [info ] [MainThread]: 6 of 8 OK hook: stock_transforms.on-run-start.5 ................................ [[32mOK[0m in 0.02s]
+[0m03:14:02.544939 [debug] [MainThread]: Writing injected SQL for node "operation.stock_transforms.stock_transforms-on-run-start-6"
+[0m03:14:02.547142 [info ] [MainThread]: 7 of 8 START hook: stock_transforms.on-run-start.6 ............................. [RUN]
+[0m03:14:02.548167 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:14:02.548756 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "master"} */
+SET s3_access_key_id='minioadmin'
+[0m03:14:02.550353 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m03:14:02.562335 [info ] [MainThread]: 7 of 8 OK hook: stock_transforms.on-run-start.6 ................................ [[32mOK[0m in 0.03s]
+[0m03:14:02.575044 [debug] [MainThread]: Writing injected SQL for node "operation.stock_transforms.stock_transforms-on-run-start-7"
+[0m03:14:02.576684 [info ] [MainThread]: 8 of 8 START hook: stock_transforms.on-run-start.7 ............................. [RUN]
+[0m03:14:02.577723 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:14:02.578377 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "master"} */
+SET s3_secret_access_key='minioadmin'
+[0m03:14:02.580023 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m03:14:02.583102 [info ] [MainThread]: 8 of 8 OK hook: stock_transforms.on-run-start.7 ................................ [[32mOK[0m in 0.02s]
+[0m03:14:02.583959 [info ] [MainThread]: 
+[0m03:14:02.584650 [debug] [MainThread]: On master: Close
+[0m03:14:02.612423 [debug] [Thread-1 (]: Began running node model.stock_transforms.stg_prices
+[0m03:14:02.615891 [info ] [Thread-1 (]: 1 of 3 START sql table model main.stg_prices ................................... [RUN]
+[0m03:14:02.617241 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.stock_transforms.stg_prices'
+[0m03:14:02.618083 [debug] [Thread-1 (]: Began compiling node model.stock_transforms.stg_prices
+[0m03:14:02.626137 [debug] [Thread-1 (]: Writing injected SQL for node "model.stock_transforms.stg_prices"
+[0m03:14:02.628387 [debug] [Thread-1 (]: Began executing node model.stock_transforms.stg_prices
+[0m03:14:02.686565 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.stg_prices"
+[0m03:14:02.687458 [debug] [Thread-1 (]: On model.stock_transforms.stg_prices: BEGIN
+[0m03:14:02.688200 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m03:14:02.764967 [debug] [Thread-1 (]: SQL status: OK in 0.077 seconds
+[0m03:14:02.766047 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.stg_prices"
+[0m03:14:02.766726 [debug] [Thread-1 (]: On model.stock_transforms.stg_prices: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "node_id": "model.stock_transforms.stg_prices"} */
+
+        INSTALL httpfs;
+  LOAD httpfs;
+  SET s3_region='us-east-1';
+  SET s3_url_style='path';
+  SET s3_endpoint='minio:9000';
+  SET s3_use_ssl=false;
+  SET s3_access_key_id='minioadmin';
+  SET s3_secret_access_key='minioadmin';
+      
+[0m03:14:02.772481 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m03:14:02.787903 [debug] [Thread-1 (]: Writing runtime sql for node "model.stock_transforms.stg_prices"
+[0m03:14:02.789057 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.stg_prices"
+[0m03:14:02.789872 [debug] [Thread-1 (]: On model.stock_transforms.stg_prices: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "node_id": "model.stock_transforms.stg_prices"} */
+
+  
+    
+    
+
+    create  table
+      "stock"."main"."stg_prices__dbt_tmp"
+  
+    as (
+      
+
+with source as (
+    select
+        ticker,
+        cast(date as TIMESTAMP_NS)        as date,
+        cast(open as double)      as open,
+        cast(high as double)      as high,
+        cast(low as double)       as low,
+        cast(close as double)     as close,
+        cast(volume as bigint)    as volume,
+        cast(ingested_at as varchar) as ingested_at
+    from read_parquet(
+        's3://stock-raw/*/year=*/month=*/*.parquet',
+        hive_partitioning = true
+    )
+    where close is not null
+      and volume > 0
+),
+
+deduped as (
+    select *,
+        row_number() over (
+            partition by ticker, date
+            order by ingested_at desc
+        ) as rn
+    from source
+)
+
+select
+    ticker,
+    date,
+    open,
+    high,
+    low,
+    close,
+    volume,
+    ingested_at
+from deduped
+where rn = 1
+    );
+  
+  
+[0m03:14:02.905750 [debug] [Thread-1 (]: SQL status: OK in 0.115 seconds
+[0m03:14:02.915100 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.stg_prices"
+[0m03:14:02.915745 [debug] [Thread-1 (]: On model.stock_transforms.stg_prices: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "node_id": "model.stock_transforms.stg_prices"} */
+alter table "stock"."main"."stg_prices__dbt_tmp" rename to "stg_prices"
+[0m03:14:02.917233 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m03:14:02.941979 [debug] [Thread-1 (]: On model.stock_transforms.stg_prices: COMMIT
+[0m03:14:02.942880 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.stg_prices"
+[0m03:14:02.943299 [debug] [Thread-1 (]: On model.stock_transforms.stg_prices: COMMIT
+[0m03:14:02.956635 [debug] [Thread-1 (]: SQL status: OK in 0.013 seconds
+[0m03:14:02.966375 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.stg_prices"
+[0m03:14:02.967149 [debug] [Thread-1 (]: On model.stock_transforms.stg_prices: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "node_id": "model.stock_transforms.stg_prices"} */
+drop table if exists "stock"."main"."stg_prices__dbt_backup" cascade
+[0m03:14:02.969302 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m03:14:02.972172 [debug] [Thread-1 (]: On model.stock_transforms.stg_prices: Close
+[0m03:14:03.022066 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '09ff2d8b-4bca-4f85-9341-4bac7f844b86', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a1911027910>]}
+[0m03:14:03.023034 [info ] [Thread-1 (]: 1 of 3 OK created sql table model main.stg_prices .............................. [[32mOK[0m in 0.40s]
+[0m03:14:03.023888 [debug] [Thread-1 (]: Finished running node model.stock_transforms.stg_prices
+[0m03:14:03.025376 [debug] [Thread-1 (]: Began running node model.stock_transforms.int_moving_averages
+[0m03:14:03.026265 [info ] [Thread-1 (]: 2 of 3 START sql table model main.int_moving_averages .......................... [RUN]
+[0m03:14:03.027890 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.stock_transforms.stg_prices, now model.stock_transforms.int_moving_averages)
+[0m03:14:03.028470 [debug] [Thread-1 (]: Began compiling node model.stock_transforms.int_moving_averages
+[0m03:14:03.035114 [debug] [Thread-1 (]: Writing injected SQL for node "model.stock_transforms.int_moving_averages"
+[0m03:14:03.036305 [debug] [Thread-1 (]: Began executing node model.stock_transforms.int_moving_averages
+[0m03:14:03.042657 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.int_moving_averages"
+[0m03:14:03.043465 [debug] [Thread-1 (]: On model.stock_transforms.int_moving_averages: BEGIN
+[0m03:14:03.043864 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m03:14:03.116673 [debug] [Thread-1 (]: SQL status: OK in 0.073 seconds
+[0m03:14:03.117431 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.int_moving_averages"
+[0m03:14:03.118024 [debug] [Thread-1 (]: On model.stock_transforms.int_moving_averages: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "node_id": "model.stock_transforms.int_moving_averages"} */
+
+        INSTALL httpfs;
+  LOAD httpfs;
+  SET s3_region='us-east-1';
+  SET s3_url_style='path';
+  SET s3_endpoint='minio:9000';
+  SET s3_use_ssl=false;
+  SET s3_access_key_id='minioadmin';
+  SET s3_secret_access_key='minioadmin';
+      
+[0m03:14:03.122639 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m03:14:03.124861 [debug] [Thread-1 (]: Writing runtime sql for node "model.stock_transforms.int_moving_averages"
+[0m03:14:03.125932 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.int_moving_averages"
+[0m03:14:03.126359 [debug] [Thread-1 (]: On model.stock_transforms.int_moving_averages: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "node_id": "model.stock_transforms.int_moving_averages"} */
+
+  
+    
+    
+
+    create  table
+      "stock"."main"."int_moving_averages__dbt_tmp"
+  
+    as (
+      with base as (
+    select
+        ticker,
+        cast(date as date) as date,
+        open,
+        high,
+        low,
+        close,
+        volume,
+        ingested_at
+    from "stock"."main"."stg_prices"
+),
+
+windowed as (
+    select
+        ticker,
+        date,
+        open,
+        high,
+        low,
+        close,
+        volume,
+
+        avg(close) over w7   as sma_7,
+        avg(close) over w21  as sma_21,
+        avg(close) over w50  as sma_50,
+        avg(close) over w12  as ema_12,
+        avg(close) over w26  as ema_26,
+
+        (close - lag(close) over (partition by ticker order by date))
+            / nullif(lag(close) over (partition by ticker order by date), 0)
+            as daily_return,
+
+        stddev(close) over w30 * sqrt(252) as volatility_30d,
+
+        greatest(
+            high - low,
+            abs(high - lag(close) over (partition by ticker order by date)),
+            abs(low  - lag(close) over (partition by ticker order by date))
+        ) as true_range
+
+    from base
+
+    window
+        w7  as (partition by ticker order by date rows between 6  preceding and current row),
+        w12 as (partition by ticker order by date rows between 11 preceding and current row),
+        w21 as (partition by ticker order by date rows between 20 preceding and current row),
+        w26 as (partition by ticker order by date rows between 25 preceding and current row),
+        w30 as (partition by ticker order by date rows between 29 preceding and current row),
+        w50 as (partition by ticker order by date rows between 49 preceding and current row)
+)
+
+select
+    *,
+    ema_12 - ema_26 as macd,
+    avg(true_range) over (
+        partition by ticker order by date
+        rows between 13 preceding and current row
+    ) as atr_14
+
+from windowed
+    );
+  
+  
+[0m03:14:03.146333 [debug] [Thread-1 (]: SQL status: OK in 0.019 seconds
+[0m03:14:03.152488 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.int_moving_averages"
+[0m03:14:03.153062 [debug] [Thread-1 (]: On model.stock_transforms.int_moving_averages: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "node_id": "model.stock_transforms.int_moving_averages"} */
+alter table "stock"."main"."int_moving_averages__dbt_tmp" rename to "int_moving_averages"
+[0m03:14:03.154585 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m03:14:03.156401 [debug] [Thread-1 (]: On model.stock_transforms.int_moving_averages: COMMIT
+[0m03:14:03.156841 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.int_moving_averages"
+[0m03:14:03.157184 [debug] [Thread-1 (]: On model.stock_transforms.int_moving_averages: COMMIT
+[0m03:14:03.176744 [debug] [Thread-1 (]: SQL status: OK in 0.019 seconds
+[0m03:14:03.179936 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.int_moving_averages"
+[0m03:14:03.180404 [debug] [Thread-1 (]: On model.stock_transforms.int_moving_averages: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "node_id": "model.stock_transforms.int_moving_averages"} */
+drop table if exists "stock"."main"."int_moving_averages__dbt_backup" cascade
+[0m03:14:03.182983 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m03:14:03.184729 [debug] [Thread-1 (]: On model.stock_transforms.int_moving_averages: Close
+[0m03:14:03.240887 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '09ff2d8b-4bca-4f85-9341-4bac7f844b86', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a191229fc90>]}
+[0m03:14:03.242092 [info ] [Thread-1 (]: 2 of 3 OK created sql table model main.int_moving_averages ..................... [[32mOK[0m in 0.21s]
+[0m03:14:03.243010 [debug] [Thread-1 (]: Finished running node model.stock_transforms.int_moving_averages
+[0m03:14:03.244181 [debug] [Thread-1 (]: Began running node model.stock_transforms.mart_dashboard
+[0m03:14:03.245465 [info ] [Thread-1 (]: 3 of 3 START sql table model main.mart_dashboard ............................... [RUN]
+[0m03:14:03.246600 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.stock_transforms.int_moving_averages, now model.stock_transforms.mart_dashboard)
+[0m03:14:03.247110 [debug] [Thread-1 (]: Began compiling node model.stock_transforms.mart_dashboard
+[0m03:14:03.252208 [debug] [Thread-1 (]: Writing injected SQL for node "model.stock_transforms.mart_dashboard"
+[0m03:14:03.253258 [debug] [Thread-1 (]: Began executing node model.stock_transforms.mart_dashboard
+[0m03:14:03.258642 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.mart_dashboard"
+[0m03:14:03.260832 [debug] [Thread-1 (]: On model.stock_transforms.mart_dashboard: BEGIN
+[0m03:14:03.261444 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m03:14:03.324963 [debug] [Thread-1 (]: SQL status: OK in 0.063 seconds
+[0m03:14:03.325667 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.mart_dashboard"
+[0m03:14:03.326119 [debug] [Thread-1 (]: On model.stock_transforms.mart_dashboard: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "node_id": "model.stock_transforms.mart_dashboard"} */
+
+        INSTALL httpfs;
+  LOAD httpfs;
+  SET s3_region='us-east-1';
+  SET s3_url_style='path';
+  SET s3_endpoint='minio:9000';
+  SET s3_use_ssl=false;
+  SET s3_access_key_id='minioadmin';
+  SET s3_secret_access_key='minioadmin';
+      
+[0m03:14:03.329826 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m03:14:03.331551 [debug] [Thread-1 (]: Writing runtime sql for node "model.stock_transforms.mart_dashboard"
+[0m03:14:03.332337 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.mart_dashboard"
+[0m03:14:03.332889 [debug] [Thread-1 (]: On model.stock_transforms.mart_dashboard: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "node_id": "model.stock_transforms.mart_dashboard"} */
+
+  
+    
+    
+
+    create  table
+      "stock"."main"."mart_dashboard__dbt_tmp"
+  
+    as (
+      select
+    ticker,
+    date,
+    close,
+    volume,
+    sma_7,
+    sma_21,
+    sma_50,
+    macd,
+    round(volatility_30d * 100, 2)  as volatility_pct,
+    round(daily_return   * 100, 4)  as daily_return_pct,
+    atr_14,
+
+    case
+        when sma_7 > sma_21 then 'bullish'
+        when sma_7 < sma_21 then 'bearish'
+        else 'neutral'
+    end as signal
+
+from "stock"."main"."int_moving_averages"
+order by ticker, date
+    );
+  
+  
+[0m03:14:03.344887 [debug] [Thread-1 (]: SQL status: OK in 0.011 seconds
+[0m03:14:03.348851 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.mart_dashboard"
+[0m03:14:03.349327 [debug] [Thread-1 (]: On model.stock_transforms.mart_dashboard: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "node_id": "model.stock_transforms.mart_dashboard"} */
+alter table "stock"."main"."mart_dashboard__dbt_tmp" rename to "mart_dashboard"
+[0m03:14:03.350977 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m03:14:03.352651 [debug] [Thread-1 (]: On model.stock_transforms.mart_dashboard: COMMIT
+[0m03:14:03.353173 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.mart_dashboard"
+[0m03:14:03.353524 [debug] [Thread-1 (]: On model.stock_transforms.mart_dashboard: COMMIT
+[0m03:14:03.366015 [debug] [Thread-1 (]: SQL status: OK in 0.012 seconds
+[0m03:14:03.369411 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.mart_dashboard"
+[0m03:14:03.370058 [debug] [Thread-1 (]: On model.stock_transforms.mart_dashboard: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "node_id": "model.stock_transforms.mart_dashboard"} */
+drop table if exists "stock"."main"."mart_dashboard__dbt_backup" cascade
+[0m03:14:03.371607 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m03:14:03.373164 [debug] [Thread-1 (]: On model.stock_transforms.mart_dashboard: Close
+[0m03:14:03.425401 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '09ff2d8b-4bca-4f85-9341-4bac7f844b86', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a1911134650>]}
+[0m03:14:03.426942 [info ] [Thread-1 (]: 3 of 3 OK created sql table model main.mart_dashboard .......................... [[32mOK[0m in 0.18s]
+[0m03:14:03.427857 [debug] [Thread-1 (]: Finished running node model.stock_transforms.mart_dashboard
+[0m03:14:03.430105 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:14:03.430530 [debug] [MainThread]: On master: BEGIN
+[0m03:14:03.430856 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m03:14:03.495124 [debug] [MainThread]: SQL status: OK in 0.064 seconds
+[0m03:14:03.495850 [debug] [MainThread]: On master: COMMIT
+[0m03:14:03.496200 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:14:03.496480 [debug] [MainThread]: On master: COMMIT
+[0m03:14:03.497507 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m03:14:03.498202 [debug] [MainThread]: On master: Close
+[0m03:14:03.503087 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m03:14:03.503957 [debug] [MainThread]: Connection 'list_stock_main' was properly closed.
+[0m03:14:03.504492 [debug] [MainThread]: Connection 'model.stock_transforms.mart_dashboard' was properly closed.
+[0m03:14:03.505127 [info ] [MainThread]: 
+[0m03:14:03.505688 [info ] [MainThread]: Finished running 8 project hooks, 3 table models in 0 hours 0 minutes and 3.82 seconds (3.82s).
+[0m03:14:03.510155 [debug] [MainThread]: Command end result
+[0m03:14:03.561711 [debug] [MainThread]: Wrote artifact WritableManifest to /dbt/target/manifest.json
+[0m03:14:03.565519 [debug] [MainThread]: Wrote artifact SemanticManifest to /dbt/target/semantic_manifest.json
+[0m03:14:03.574907 [debug] [MainThread]: Wrote artifact RunExecutionResult to /dbt/target/run_results.json
+[0m03:14:03.575385 [info ] [MainThread]: 
+[0m03:14:03.575926 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m03:14:03.576430 [info ] [MainThread]: 
+[0m03:14:03.576907 [info ] [MainThread]: Done. PASS=11 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=11
+[0m03:14:03.577903 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m03:14:03.580626 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 6.1972637, "process_in_blocks": "6312", "process_kernel_time": 0.979663, "process_mem_max_rss": "209040", "process_out_blocks": "56312", "process_user_time": 6.691061}
+[0m03:14:03.581458 [debug] [MainThread]: Command `dbt run` succeeded at 03:14:03.581281 after 6.20 seconds
+[0m03:14:03.582215 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a191a979190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a191f098810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a191a514f90>]}
+[0m03:14:03.582782 [debug] [MainThread]: Flushing usage events
+[0m03:14:05.085834 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m03:22:39.990165 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7230c214b810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7230c21b3b10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7230c2588350>]}
+
+
+============================== 03:22:40.000152 | 217cba25-0386-4d1a-b793-5c12af8f3cc5 ==============================
+[0m03:22:40.000152 [info ] [MainThread]: Running with dbt=1.11.8
+[0m03:22:40.000970 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'printer_width': '80', 'invocation_command': 'dbt run', 'version_check': 'True', 'fail_fast': 'False', 'write_json': 'True', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'empty': 'False', 'no_print': 'None', 'log_cache_events': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'warn_error': 'None', 'log_path': '/dbt/logs', 'partial_parse': 'True', 'indirect_selection': 'eager', 'target_path': 'None', 'quiet': 'False', 'cache_selected_only': 'False', 'profiles_dir': '/dbt'}
+[0m03:22:40.417081 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '217cba25-0386-4d1a-b793-5c12af8f3cc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7230c2025210>]}
+[0m03:22:40.491992 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '217cba25-0386-4d1a-b793-5c12af8f3cc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7230c524b6d0>]}
+[0m03:22:40.528048 [info ] [MainThread]: Registered adapter: duckdb=1.8.1
+[0m03:22:40.680170 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m03:22:40.928579 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m03:22:40.929199 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m03:22:40.929574 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m03:22:40.986602 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '217cba25-0386-4d1a-b793-5c12af8f3cc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7230c1fc7450>]}
+[0m03:22:41.209449 [debug] [MainThread]: Wrote artifact WritableManifest to /dbt/target/manifest.json
+[0m03:22:41.211567 [debug] [MainThread]: Wrote artifact SemanticManifest to /dbt/target/semantic_manifest.json
+[0m03:22:41.239774 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '217cba25-0386-4d1a-b793-5c12af8f3cc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7230ba1b5090>]}
+[0m03:22:41.240504 [info ] [MainThread]: Found 3 models, 8 operations, 5 data tests, 457 macros
+[0m03:22:41.241018 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '217cba25-0386-4d1a-b793-5c12af8f3cc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7230ba1c7b10>]}
+[0m03:22:41.243362 [info ] [MainThread]: 
+[0m03:22:41.243797 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m03:22:41.244211 [info ] [MainThread]: 
+[0m03:22:41.245903 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m03:22:41.255182 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_stock'
+[0m03:22:41.309282 [debug] [ThreadPool]: Using duckdb connection "list_stock"
+[0m03:22:41.309783 [debug] [ThreadPool]: On list_stock: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "list_stock"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where catalog_name = '"stock"'
+    
+  
+  
+[0m03:22:41.310111 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:22:43.160280 [debug] [ThreadPool]: SQL status: OK in 1.850 seconds
+[0m03:22:43.162981 [debug] [ThreadPool]: On list_stock: Close
+[0m03:22:43.167333 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_stock, now create_stock_main)
+[0m03:22:43.168041 [debug] [ThreadPool]: Creating schema "database: "stock"
+schema: "main"
+"
+[0m03:22:43.180254 [debug] [ThreadPool]: Using duckdb connection "create_stock_main"
+[0m03:22:43.181031 [debug] [ThreadPool]: On create_stock_main: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "create_stock_main"} */
+
+    
+        select type from duckdb_databases()
+        where database_name='stock'
+        and type='sqlite'
+    
+  
+[0m03:22:43.181455 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m03:22:43.255041 [debug] [ThreadPool]: SQL status: OK in 0.073 seconds
+[0m03:22:43.258877 [debug] [ThreadPool]: Using duckdb connection "create_stock_main"
+[0m03:22:43.263516 [debug] [ThreadPool]: On create_stock_main: BEGIN
+[0m03:22:43.265147 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m03:22:43.265793 [debug] [ThreadPool]: Using duckdb connection "create_stock_main"
+[0m03:22:43.266453 [debug] [ThreadPool]: On create_stock_main: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "create_stock_main"} */
+
+    
+    
+        create schema if not exists "stock"."main"
+    
+[0m03:22:43.267734 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m03:22:43.269253 [debug] [ThreadPool]: On create_stock_main: COMMIT
+[0m03:22:43.269895 [debug] [ThreadPool]: Using duckdb connection "create_stock_main"
+[0m03:22:43.270441 [debug] [ThreadPool]: On create_stock_main: COMMIT
+[0m03:22:43.271644 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m03:22:43.272024 [debug] [ThreadPool]: On create_stock_main: Close
+[0m03:22:43.280253 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_stock_main'
+[0m03:22:43.289078 [debug] [ThreadPool]: Using duckdb connection "list_stock_main"
+[0m03:22:43.289583 [debug] [ThreadPool]: On list_stock_main: BEGIN
+[0m03:22:43.289945 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:22:43.382058 [debug] [ThreadPool]: SQL status: OK in 0.092 seconds
+[0m03:22:43.382676 [debug] [ThreadPool]: Using duckdb connection "list_stock_main"
+[0m03:22:43.383357 [debug] [ThreadPool]: On list_stock_main: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "list_stock_main"} */
+select
+      'stock' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main'
+    and table_catalog = 'stock'
+  
+[0m03:22:43.388902 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m03:22:43.390810 [debug] [ThreadPool]: On list_stock_main: ROLLBACK
+[0m03:22:43.391669 [debug] [ThreadPool]: Failed to rollback 'list_stock_main'
+[0m03:22:43.392524 [debug] [ThreadPool]: On list_stock_main: Close
+[0m03:22:43.396979 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '217cba25-0386-4d1a-b793-5c12af8f3cc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7230c27b4690>]}
+[0m03:22:43.397885 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:22:43.398419 [debug] [MainThread]: On master: BEGIN
+[0m03:22:43.398809 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m03:22:43.464202 [debug] [MainThread]: SQL status: OK in 0.065 seconds
+[0m03:22:43.465153 [debug] [MainThread]: On master: COMMIT
+[0m03:22:43.465744 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:22:43.466377 [debug] [MainThread]: On master: COMMIT
+[0m03:22:43.467805 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m03:22:43.487924 [debug] [MainThread]: Writing injected SQL for node "operation.stock_transforms.stock_transforms-on-run-start-0"
+[0m03:22:43.492220 [info ] [MainThread]: 1 of 8 START hook: stock_transforms.on-run-start.0 ............................. [RUN]
+[0m03:22:43.493528 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:22:43.445251 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "master"} */
+INSTALL httpfs
+[0m03:22:43.447082 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m03:22:43.448357 [info ] [MainThread]: 1 of 8 OK hook: stock_transforms.on-run-start.0 ................................ [[32mOK[0m in -0.02s]
+[0m03:22:43.451896 [debug] [MainThread]: Writing injected SQL for node "operation.stock_transforms.stock_transforms-on-run-start-1"
+[0m03:22:43.453568 [info ] [MainThread]: 2 of 8 START hook: stock_transforms.on-run-start.1 ............................. [RUN]
+[0m03:22:43.454297 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:22:43.454814 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "master"} */
+LOAD httpfs
+[0m03:22:43.456277 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m03:22:43.458058 [info ] [MainThread]: 2 of 8 OK hook: stock_transforms.on-run-start.1 ................................ [[32mOK[0m in 0.01s]
+[0m03:22:43.461782 [debug] [MainThread]: Writing injected SQL for node "operation.stock_transforms.stock_transforms-on-run-start-2"
+[0m03:22:43.463209 [info ] [MainThread]: 3 of 8 START hook: stock_transforms.on-run-start.2 ............................. [RUN]
+[0m03:22:43.464283 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:22:43.465060 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "master"} */
+SET s3_region='us-east-1'
+[0m03:22:43.466891 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m03:22:43.469260 [info ] [MainThread]: 3 of 8 OK hook: stock_transforms.on-run-start.2 ................................ [[32mOK[0m in 0.01s]
+[0m03:22:43.474010 [debug] [MainThread]: Writing injected SQL for node "operation.stock_transforms.stock_transforms-on-run-start-3"
+[0m03:22:43.475828 [info ] [MainThread]: 4 of 8 START hook: stock_transforms.on-run-start.3 ............................. [RUN]
+[0m03:22:43.476849 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:22:43.477562 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "master"} */
+SET s3_url_style='path'
+[0m03:22:43.479427 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m03:22:43.485255 [info ] [MainThread]: 4 of 8 OK hook: stock_transforms.on-run-start.3 ................................ [[32mOK[0m in 0.01s]
+[0m03:22:43.491969 [debug] [MainThread]: Writing injected SQL for node "operation.stock_transforms.stock_transforms-on-run-start-4"
+[0m03:22:43.493629 [info ] [MainThread]: 5 of 8 START hook: stock_transforms.on-run-start.4 ............................. [RUN]
+[0m03:22:43.494574 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:22:43.495241 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "master"} */
+SET s3_endpoint='minio:9000'
+[0m03:22:43.497268 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m03:22:43.506975 [info ] [MainThread]: 5 of 8 OK hook: stock_transforms.on-run-start.4 ................................ [[32mOK[0m in 0.02s]
+[0m03:22:43.511414 [debug] [MainThread]: Writing injected SQL for node "operation.stock_transforms.stock_transforms-on-run-start-5"
+[0m03:22:43.513117 [info ] [MainThread]: 6 of 8 START hook: stock_transforms.on-run-start.5 ............................. [RUN]
+[0m03:22:43.514223 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:22:43.515125 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "master"} */
+SET s3_use_ssl=false
+[0m03:22:43.516648 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m03:22:43.518452 [info ] [MainThread]: 6 of 8 OK hook: stock_transforms.on-run-start.5 ................................ [[32mOK[0m in 0.01s]
+[0m03:22:43.523292 [debug] [MainThread]: Writing injected SQL for node "operation.stock_transforms.stock_transforms-on-run-start-6"
+[0m03:22:43.524858 [info ] [MainThread]: 7 of 8 START hook: stock_transforms.on-run-start.6 ............................. [RUN]
+[0m03:22:43.526816 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:22:43.527520 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "master"} */
+SET s3_access_key_id='minioadmin'
+[0m03:22:43.529203 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m03:22:43.531238 [info ] [MainThread]: 7 of 8 OK hook: stock_transforms.on-run-start.6 ................................ [[32mOK[0m in 0.01s]
+[0m03:22:43.540084 [debug] [MainThread]: Writing injected SQL for node "operation.stock_transforms.stock_transforms-on-run-start-7"
+[0m03:22:43.543391 [info ] [MainThread]: 8 of 8 START hook: stock_transforms.on-run-start.7 ............................. [RUN]
+[0m03:22:43.544456 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:22:43.545129 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "connection_name": "master"} */
+SET s3_secret_access_key='minioadmin'
+[0m03:22:43.546837 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m03:22:43.548615 [info ] [MainThread]: 8 of 8 OK hook: stock_transforms.on-run-start.7 ................................ [[32mOK[0m in 0.02s]
+[0m03:22:43.549319 [info ] [MainThread]: 
+[0m03:22:43.550018 [debug] [MainThread]: On master: Close
+[0m03:22:43.569225 [debug] [Thread-1 (]: Began running node model.stock_transforms.stg_prices
+[0m03:22:43.571690 [info ] [Thread-1 (]: 1 of 3 START sql table model main.stg_prices ................................... [RUN]
+[0m03:22:43.573024 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.stock_transforms.stg_prices'
+[0m03:22:43.573869 [debug] [Thread-1 (]: Began compiling node model.stock_transforms.stg_prices
+[0m03:22:43.579781 [debug] [Thread-1 (]: Writing injected SQL for node "model.stock_transforms.stg_prices"
+[0m03:22:43.580964 [debug] [Thread-1 (]: Began executing node model.stock_transforms.stg_prices
+[0m03:22:43.622040 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.stg_prices"
+[0m03:22:43.622673 [debug] [Thread-1 (]: On model.stock_transforms.stg_prices: BEGIN
+[0m03:22:43.623041 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m03:22:43.740735 [debug] [Thread-1 (]: SQL status: OK in 0.117 seconds
+[0m03:22:43.741705 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.stg_prices"
+[0m03:22:43.742342 [debug] [Thread-1 (]: On model.stock_transforms.stg_prices: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "node_id": "model.stock_transforms.stg_prices"} */
+
+        INSTALL httpfs;
+  LOAD httpfs;
+  SET s3_region='us-east-1';
+  SET s3_url_style='path';
+  SET s3_endpoint='minio:9000';
+  SET s3_use_ssl=false;
+  SET s3_access_key_id='minioadmin';
+  SET s3_secret_access_key='minioadmin';
+      
+[0m03:22:43.747094 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m03:22:43.770905 [debug] [Thread-1 (]: Writing runtime sql for node "model.stock_transforms.stg_prices"
+[0m03:22:43.851292 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.stg_prices"
+[0m03:22:43.852119 [debug] [Thread-1 (]: On model.stock_transforms.stg_prices: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "node_id": "model.stock_transforms.stg_prices"} */
+
+  
+    
+    
+
+    create  table
+      "stock"."main"."stg_prices__dbt_tmp"
+  
+    as (
+      
+
+with source as (
+    select
+        ticker,
+        cast(date as TIMESTAMP_NS)        as date,
+        cast(open as double)      as open,
+        cast(high as double)      as high,
+        cast(low as double)       as low,
+        cast(close as double)     as close,
+        cast(volume as bigint)    as volume,
+        cast(ingested_at as varchar) as ingested_at
+    from read_parquet(
+        's3://stock-raw/*/year=*/month=*/*.parquet',
+        hive_partitioning = true
+    )
+    where close is not null
+      and volume > 0
+),
+
+deduped as (
+    select *,
+        row_number() over (
+            partition by ticker, date
+            order by ingested_at desc
+        ) as rn
+    from source
+)
+
+select
+    ticker,
+    date,
+    open,
+    high,
+    low,
+    close,
+    volume,
+    ingested_at
+from deduped
+where rn = 1
+    );
+  
+  
+[0m03:22:44.086914 [debug] [Thread-1 (]: SQL status: OK in 0.234 seconds
+[0m03:22:44.098926 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.stg_prices"
+[0m03:22:44.099673 [debug] [Thread-1 (]: On model.stock_transforms.stg_prices: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "node_id": "model.stock_transforms.stg_prices"} */
+alter table "stock"."main"."stg_prices__dbt_tmp" rename to "stg_prices"
+[0m03:22:44.101650 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m03:22:44.130590 [debug] [Thread-1 (]: On model.stock_transforms.stg_prices: COMMIT
+[0m03:22:44.131351 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.stg_prices"
+[0m03:22:44.131882 [debug] [Thread-1 (]: On model.stock_transforms.stg_prices: COMMIT
+[0m03:22:44.148351 [debug] [Thread-1 (]: SQL status: OK in 0.016 seconds
+[0m03:22:44.154455 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.stg_prices"
+[0m03:22:44.155374 [debug] [Thread-1 (]: On model.stock_transforms.stg_prices: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "node_id": "model.stock_transforms.stg_prices"} */
+drop table if exists "stock"."main"."stg_prices__dbt_backup" cascade
+[0m03:22:44.157170 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m03:22:44.162016 [debug] [Thread-1 (]: On model.stock_transforms.stg_prices: Close
+[0m03:22:44.204905 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '217cba25-0386-4d1a-b793-5c12af8f3cc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7230c405c490>]}
+[0m03:22:44.205982 [info ] [Thread-1 (]: 1 of 3 OK created sql table model main.stg_prices .............................. [[32mOK[0m in 0.63s]
+[0m03:22:44.206843 [debug] [Thread-1 (]: Finished running node model.stock_transforms.stg_prices
+[0m03:22:44.208522 [debug] [Thread-1 (]: Began running node model.stock_transforms.int_moving_averages
+[0m03:22:44.209191 [info ] [Thread-1 (]: 2 of 3 START sql table model main.int_moving_averages .......................... [RUN]
+[0m03:22:44.210047 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.stock_transforms.stg_prices, now model.stock_transforms.int_moving_averages)
+[0m03:22:44.210632 [debug] [Thread-1 (]: Began compiling node model.stock_transforms.int_moving_averages
+[0m03:22:44.216353 [debug] [Thread-1 (]: Writing injected SQL for node "model.stock_transforms.int_moving_averages"
+[0m03:22:44.217838 [debug] [Thread-1 (]: Began executing node model.stock_transforms.int_moving_averages
+[0m03:22:44.223250 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.int_moving_averages"
+[0m03:22:44.224071 [debug] [Thread-1 (]: On model.stock_transforms.int_moving_averages: BEGIN
+[0m03:22:44.225120 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m03:22:44.307853 [debug] [Thread-1 (]: SQL status: OK in 0.082 seconds
+[0m03:22:44.309197 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.int_moving_averages"
+[0m03:22:44.311013 [debug] [Thread-1 (]: On model.stock_transforms.int_moving_averages: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "node_id": "model.stock_transforms.int_moving_averages"} */
+
+        INSTALL httpfs;
+  LOAD httpfs;
+  SET s3_region='us-east-1';
+  SET s3_url_style='path';
+  SET s3_endpoint='minio:9000';
+  SET s3_use_ssl=false;
+  SET s3_access_key_id='minioadmin';
+  SET s3_secret_access_key='minioadmin';
+      
+[0m03:22:44.317075 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m03:22:44.319524 [debug] [Thread-1 (]: Writing runtime sql for node "model.stock_transforms.int_moving_averages"
+[0m03:22:44.320655 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.int_moving_averages"
+[0m03:22:44.321174 [debug] [Thread-1 (]: On model.stock_transforms.int_moving_averages: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "node_id": "model.stock_transforms.int_moving_averages"} */
+
+  
+    
+    
+
+    create  table
+      "stock"."main"."int_moving_averages__dbt_tmp"
+  
+    as (
+      with base as (
+    select
+        ticker,
+        cast(date as date) as date,
+        open,
+        high,
+        low,
+        close,
+        volume,
+        ingested_at
+    from "stock"."main"."stg_prices"
+),
+
+windowed as (
+    select
+        ticker,
+        date,
+        open,
+        high,
+        low,
+        close,
+        volume,
+
+        avg(close) over w7   as sma_7,
+        avg(close) over w21  as sma_21,
+        avg(close) over w50  as sma_50,
+        avg(close) over w12  as ema_12,
+        avg(close) over w26  as ema_26,
+
+        (close - lag(close) over (partition by ticker order by date))
+            / nullif(lag(close) over (partition by ticker order by date), 0)
+            as daily_return,
+
+        stddev(close) over w30 * sqrt(252) as volatility_30d,
+
+        greatest(
+            high - low,
+            abs(high - lag(close) over (partition by ticker order by date)),
+            abs(low  - lag(close) over (partition by ticker order by date))
+        ) as true_range
+
+    from base
+
+    window
+        w7  as (partition by ticker order by date rows between 6  preceding and current row),
+        w12 as (partition by ticker order by date rows between 11 preceding and current row),
+        w21 as (partition by ticker order by date rows between 20 preceding and current row),
+        w26 as (partition by ticker order by date rows between 25 preceding and current row),
+        w30 as (partition by ticker order by date rows between 29 preceding and current row),
+        w50 as (partition by ticker order by date rows between 49 preceding and current row)
+)
+
+select
+    *,
+    ema_12 - ema_26 as macd,
+    avg(true_range) over (
+        partition by ticker order by date
+        rows between 13 preceding and current row
+    ) as atr_14
+
+from windowed
+    );
+  
+  
+[0m03:22:44.344637 [debug] [Thread-1 (]: SQL status: OK in 0.023 seconds
+[0m03:22:44.348536 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.int_moving_averages"
+[0m03:22:44.349057 [debug] [Thread-1 (]: On model.stock_transforms.int_moving_averages: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "node_id": "model.stock_transforms.int_moving_averages"} */
+alter table "stock"."main"."int_moving_averages__dbt_tmp" rename to "int_moving_averages"
+[0m03:22:44.350219 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m03:22:44.352451 [debug] [Thread-1 (]: On model.stock_transforms.int_moving_averages: COMMIT
+[0m03:22:44.353003 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.int_moving_averages"
+[0m03:22:44.353536 [debug] [Thread-1 (]: On model.stock_transforms.int_moving_averages: COMMIT
+[0m03:22:44.366047 [debug] [Thread-1 (]: SQL status: OK in 0.012 seconds
+[0m03:22:44.372921 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.int_moving_averages"
+[0m03:22:44.374643 [debug] [Thread-1 (]: On model.stock_transforms.int_moving_averages: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "node_id": "model.stock_transforms.int_moving_averages"} */
+drop table if exists "stock"."main"."int_moving_averages__dbt_backup" cascade
+[0m03:22:44.379128 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m03:22:44.381797 [debug] [Thread-1 (]: On model.stock_transforms.int_moving_averages: Close
+[0m03:22:44.430415 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '217cba25-0386-4d1a-b793-5c12af8f3cc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7230b821cd90>]}
+[0m03:22:44.431743 [info ] [Thread-1 (]: 2 of 3 OK created sql table model main.int_moving_averages ..................... [[32mOK[0m in 0.22s]
+[0m03:22:44.432652 [debug] [Thread-1 (]: Finished running node model.stock_transforms.int_moving_averages
+[0m03:22:44.434172 [debug] [Thread-1 (]: Began running node model.stock_transforms.mart_dashboard
+[0m03:22:44.435004 [info ] [Thread-1 (]: 3 of 3 START sql table model main.mart_dashboard ............................... [RUN]
+[0m03:22:44.435843 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.stock_transforms.int_moving_averages, now model.stock_transforms.mart_dashboard)
+[0m03:22:44.436411 [debug] [Thread-1 (]: Began compiling node model.stock_transforms.mart_dashboard
+[0m03:22:44.439971 [debug] [Thread-1 (]: Writing injected SQL for node "model.stock_transforms.mart_dashboard"
+[0m03:22:44.441291 [debug] [Thread-1 (]: Began executing node model.stock_transforms.mart_dashboard
+[0m03:22:44.448644 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.mart_dashboard"
+[0m03:22:44.449319 [debug] [Thread-1 (]: On model.stock_transforms.mart_dashboard: BEGIN
+[0m03:22:44.449932 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m03:22:44.517792 [debug] [Thread-1 (]: SQL status: OK in 0.068 seconds
+[0m03:22:44.518460 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.mart_dashboard"
+[0m03:22:44.518865 [debug] [Thread-1 (]: On model.stock_transforms.mart_dashboard: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "node_id": "model.stock_transforms.mart_dashboard"} */
+
+        INSTALL httpfs;
+  LOAD httpfs;
+  SET s3_region='us-east-1';
+  SET s3_url_style='path';
+  SET s3_endpoint='minio:9000';
+  SET s3_use_ssl=false;
+  SET s3_access_key_id='minioadmin';
+  SET s3_secret_access_key='minioadmin';
+      
+[0m03:22:44.522970 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m03:22:44.528493 [debug] [Thread-1 (]: Writing runtime sql for node "model.stock_transforms.mart_dashboard"
+[0m03:22:44.532990 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.mart_dashboard"
+[0m03:22:44.533983 [debug] [Thread-1 (]: On model.stock_transforms.mart_dashboard: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "node_id": "model.stock_transforms.mart_dashboard"} */
+
+  
+    
+    
+
+    create  table
+      "stock"."main"."mart_dashboard__dbt_tmp"
+  
+    as (
+      select
+    ticker,
+    date,
+    close,
+    volume,
+    sma_7,
+    sma_21,
+    sma_50,
+    macd,
+    round(volatility_30d * 100, 2)  as volatility_pct,
+    round(daily_return   * 100, 4)  as daily_return_pct,
+    atr_14,
+
+    case
+        when sma_7 > sma_21 then 'bullish'
+        when sma_7 < sma_21 then 'bearish'
+        else 'neutral'
+    end as signal
+
+from "stock"."main"."int_moving_averages"
+order by ticker, date
+    );
+  
+  
+[0m03:22:44.565645 [debug] [Thread-1 (]: SQL status: OK in 0.031 seconds
+[0m03:22:44.583933 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.mart_dashboard"
+[0m03:22:44.584883 [debug] [Thread-1 (]: On model.stock_transforms.mart_dashboard: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "node_id": "model.stock_transforms.mart_dashboard"} */
+alter table "stock"."main"."mart_dashboard__dbt_tmp" rename to "mart_dashboard"
+[0m03:22:44.596208 [debug] [Thread-1 (]: SQL status: OK in 0.009 seconds
+[0m03:22:44.598874 [debug] [Thread-1 (]: On model.stock_transforms.mart_dashboard: COMMIT
+[0m03:22:44.599589 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.mart_dashboard"
+[0m03:22:44.600032 [debug] [Thread-1 (]: On model.stock_transforms.mart_dashboard: COMMIT
+[0m03:22:44.614483 [debug] [Thread-1 (]: SQL status: OK in 0.014 seconds
+[0m03:22:44.620019 [debug] [Thread-1 (]: Using duckdb connection "model.stock_transforms.mart_dashboard"
+[0m03:22:44.620564 [debug] [Thread-1 (]: On model.stock_transforms.mart_dashboard: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "stock_transforms", "target_name": "dev", "node_id": "model.stock_transforms.mart_dashboard"} */
+drop table if exists "stock"."main"."mart_dashboard__dbt_backup" cascade
+[0m03:22:44.621756 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m03:22:44.623820 [debug] [Thread-1 (]: On model.stock_transforms.mart_dashboard: Close
+[0m03:22:44.667861 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '217cba25-0386-4d1a-b793-5c12af8f3cc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7230b826ce90>]}
+[0m03:22:44.668845 [info ] [Thread-1 (]: 3 of 3 OK created sql table model main.mart_dashboard .......................... [[32mOK[0m in 0.23s]
+[0m03:22:44.669723 [debug] [Thread-1 (]: Finished running node model.stock_transforms.mart_dashboard
+[0m03:22:44.672821 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:22:44.673586 [debug] [MainThread]: On master: BEGIN
+[0m03:22:44.674003 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m03:22:44.755488 [debug] [MainThread]: SQL status: OK in 0.081 seconds
+[0m03:22:44.756383 [debug] [MainThread]: On master: COMMIT
+[0m03:22:44.757012 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:22:44.757547 [debug] [MainThread]: On master: COMMIT
+[0m03:22:44.758858 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m03:22:44.759421 [debug] [MainThread]: On master: Close
+[0m03:22:44.762886 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m03:22:44.763449 [debug] [MainThread]: Connection 'create_stock_main' was properly closed.
+[0m03:22:44.763830 [debug] [MainThread]: Connection 'list_stock_main' was properly closed.
+[0m03:22:44.764176 [debug] [MainThread]: Connection 'model.stock_transforms.mart_dashboard' was properly closed.
+[0m03:22:44.764746 [info ] [MainThread]: 
+[0m03:22:44.765296 [info ] [MainThread]: Finished running 8 project hooks, 3 table models in 0 hours 0 minutes and 3.52 seconds (3.52s).
+[0m03:22:44.770966 [debug] [MainThread]: Command end result
+[0m03:22:44.833335 [debug] [MainThread]: Wrote artifact WritableManifest to /dbt/target/manifest.json
+[0m03:22:44.837838 [debug] [MainThread]: Wrote artifact SemanticManifest to /dbt/target/semantic_manifest.json
+[0m03:22:44.845119 [debug] [MainThread]: Wrote artifact RunExecutionResult to /dbt/target/run_results.json
+[0m03:22:44.845710 [info ] [MainThread]: 
+[0m03:22:44.846260 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m03:22:44.846718 [info ] [MainThread]: 
+[0m03:22:44.847321 [info ] [MainThread]: Done. PASS=11 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=11
+[0m03:22:44.849019 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 4.972206, "process_in_blocks": "0", "process_kernel_time": 1.489238, "process_mem_max_rss": "202476", "process_out_blocks": "55360", "process_user_time": 7.135757}
+[0m03:22:44.849833 [debug] [MainThread]: Command `dbt run` succeeded at 03:22:44.849654 after 4.97 seconds
+[0m03:22:44.850440 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7230c1fc77d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7230c1fc7690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7230c6c7d210>]}
+[0m03:22:44.851003 [debug] [MainThread]: Flushing usage events
+[0m03:22:46.202801 [debug] [MainThread]: An error was encountered while trying to flush usage events

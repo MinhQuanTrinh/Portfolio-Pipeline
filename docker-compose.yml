@@ -3,7 +3,7 @@ x-airflow-common: &airflow-common
   environment:
     AIRFLOW__CORE__EXECUTOR: LocalExecutor
     AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
-    AIRFLOW__CORE__FERNET_KEY: "MrFAHNEAutg-WLgfbPq0m7sLcrVt7Tar2jb4ZDeZggw="
+    AIRFLOW__CORE__FERNET_KEY: "46BKJoQYlPPOexq0OhDZnIlNepKFf87WFwLt0nIigo="
     AIRFLOW__CORE__LOAD_EXAMPLES: "false"
     AIRFLOW_CONN_MINIO_S3: >-
       aws://minioadmin:minioadmin@?endpoint_url=http%3A%2F%2Fminio%3A9000
@@ -11,6 +11,7 @@ x-airflow-common: &airflow-common
     - ./dags:/opt/airflow/dags
     - ./requirements-airflow.txt:/requirements.txt   # <-- airflow only
     - airflow_logs:/opt/airflow/logs
+    - /var/run/docker.sock:/var/run/docker.sock
   depends_on:
     postgres:
       condition: service_healthy
@@ -31,13 +32,18 @@ services:
   airflow-init:
     <<: *airflow-common
     command: >
-      bash -c "pip install -r /requirements.txt && airflow db init &&
-      airflow users create --username admin --password admin --firstname Admin --lastname User --role Admin --email admin@example.com"
+      bash -c "pip install -r /requirements.txt &&
+               airflow db init &&
+               airflow users create
+                 --username admin --password admin
+                 --firstname Admin --lastname User
+                 --role Admin --email admin@example.com"
     restart: "no"
 
+  # Web UI does not need DAG deps (yfinance, etc.). Pip to PyPI here blocks startup if SSL/network fails.
   airflow-webserver:
     <<: *airflow-common
-    command: bash -c "pip install -r /requirements.txt && airflow webserver"
+    command: airflow webserver
     ports: ["8080:8080"]
     restart: always
     depends_on: [airflow-init]
@@ -54,10 +60,11 @@ services:
     working_dir: /dbt
     volumes:
       - ./stock_transforms:/dbt
-      - ./requirements-dbt.txt:/requirements.txt     # <-- dbt only
+      - ./requirements-dbt.txt:/requirements-dbt.txt     # <-- dbt only
       - ~/.dbt:/root/.dbt
+      - duckdb_data:/tmp 
     command: >
-      bash -c "pip install -r /requirements.txt -q && tail -f /dev/null"
+      bash -c "pip install -r /requirements-dbt.txt -q && tail -f /dev/null"
     depends_on: [minio]
 
   minio:
@@ -80,8 +87,11 @@ services:
     working_dir: /app
     volumes:
       - ./dashboard:/app
-      - ./requirements-dashboard.txt:/requirements.txt  # <-- dashboard only
+      - ./requirements-dashboard.txt:/requirements.txt
+      - duckdb_data:/tmp   
     ports: ["8501:8501"]
+    environment:
+      DUCKDB_PATH: /tmp/stock.duckdb
     command: >
       bash -c "pip install -r /requirements.txt -q &&
                streamlit run app.py --server.address 0.0.0.0"
@@ -91,3 +101,4 @@ volumes:
   postgres_data:
   minio_data:
   airflow_logs:
+  duckdb_data:
