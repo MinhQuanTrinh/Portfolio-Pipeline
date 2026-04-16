@@ -5,9 +5,61 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import os
 
-st.set_page_config(page_title="ASX Stock Analytics", layout="wide", page_icon="📈")
+st.set_page_config(page_title="Portfolio Dashboard", layout="wide")
 
 DUCKDB_PATH = os.getenv("DUCKDB_PATH", "/tmp/stock.duckdb")
+
+#Gather articles for each ticker
+TICKER_INFO = {
+    "LDX.AX": {
+        "name": "Lumos Diagnostics", "LDX",
+        "link": [
+            {"label": "ASX Announcements", "url": "https://www.asx.com.au/markets/company/LDX" },
+            {"label": "Hot Copper Discussions", "url": "https://hotcopper.com.au/asx/ldx/"},
+        ] ,
+    },
+    "4DX.AX": {
+        "name": "4DMedical",
+        "links": [
+            {"label": "ASX Announcements", "url": "https://www.asx.com.au/markets/company/4DX"},
+            {"label": "Reuters Profile", "url": "https://www.reuters.com/markets/companies/4DX.AX"},
+            {"label": "Simply Wall St", "url": "https://simplywall.st/stocks/au/pharma-biotech/asx-4dx/4dmedical-shares"},
+        ],
+    },
+    "CU6.AX": {
+        "name": "Clarity Pharmaceuticals",
+        "links": [
+            {"label": "ASX Announcements", "url": "https://www.asx.com.au/markets/company/CU6"},
+            {"label": "Reuters Profile", "url": "https://www.reuters.com/markets/companies/CU6.AX"},
+            {"label": "Simply Wall St", "url": "https://simplywall.st/stocks/au/pharma-biotech/asx-cu6/clarity-pharmaceuticals-shares"},
+        ],
+    },
+    "PME.AX": {
+        "name": "Pro Medicus",
+        "links": [
+            {"label": "ASX Announcements", "url": "https://www.asx.com.au/markets/company/PME"},
+            {"label": "Reuters Profile", "url": "https://www.reuters.com/markets/companies/PME.AX"},
+            {"label": "Simply Wall St", "url": "https://simplywall.st/stocks/au/tech/asx-pme/pro-medicus-shares"},
+        ],
+    },
+},
+
+# MACD indicator
+def compute_macd_signal(series: pd.Series, fast=12, slow=26, signal=9):
+    ema_fast   = series.ewm(span=fast, adjust=False).mean()
+    ema_slow   = series.ewm(span=slow, adjust=False).mean()
+    macd_line  = ema_fast - ema_slow
+    signal_line = macd_line.ewm(span=signal, adjust=False).mean()
+    histogram  = macd_line - signal_line
+    return macd_line, signal_line, histogram
+
+# RSI indicator
+def compute_rsi(series: pd.Series, period: int = 14) -> pd.Series:
+    delta = series.diff()
+    gain  = delta.clip(lower=0).rolling(period).mean()
+    loss  = (-delta.clip(upper=0)).rolling(period).mean()
+    rs    = gain / loss.replace(0, np.nan)
+    return 100 - (100 / (1 + rs))
 
 @st.cache_data(ttl=3600)
 def load_data(ticker: str) -> pd.DataFrame:
