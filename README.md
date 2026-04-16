@@ -1,4 +1,6 @@
-# Portfolio-Pipeline
+<img width="1865" height="887" alt="image" src="https://github.com/user-attachments/assets/7c7600c7-4f2a-4519-9e79-17b0664795ef" />
+<img width="1862" height="873" alt="image" src="https://github.com/user-attachments/assets/c975f75f-b4f2-4740-9129-a5aa896b411c" />
+
 
 Project Structure:
 
@@ -48,69 +50,14 @@ Portfolio-Pipeline/
 
 
 
-Portfolio-Pipeline is an end-to-end pipeline for generating stock technical indicators for a small set of Australian tickers.
-
-Ingest (Airflow + Yahoo Finance → MinIO)
-
-The Airflow DAG stock_price_pipeline downloads historical OHLCV data via yfinance for tickers:
-LDX.AX, 4DX.AX, CU6.AX, PME.AX
-It writes the data as Parquet into MinIO bucket stock-raw using this style of keys:
-{ticker_sanitized}/year={YYYY}/month={MM}/{ticker_sanitized}_{YYYY-MM-DD}.parquet
-Transform (dbt + DuckDB → transformed mart data inside DuckDB)
-
-dbt uses the DuckDB adapter with the httpfs S3 extension so DuckDB can read Parquet directly from MinIO.
-Main models:
-stg_prices (staging view): reads from s3://stock-raw/*/year=*/month=*/*.parquet, casts types, dedupes by (ticker, date).
-int_moving_averages (intermediate table): computes SMA/EMA, daily returns, volatility, true range/ATR, plus MACD/ATR-style aggregations via SQL windows.
-mart_dashboard (mart table): selects final columns and derives a signal (“bullish/bearish/neutral”).
-The dbt output is materialized as DuckDB tables in the database file configured in profiles.yml (/tmp/stock.duckdb), not automatically exported to S3 as Parquet.
-Visualize (Streamlit + MinIO)
-
-The Streamlit app is intended to load mart Parquet from MinIO bucket stock-transformed and plot indicators.
-How to operate it (today, based on the code in your repo)
-1) Start the stack
-From Portfolio-Pipeline/:
-
-docker compose up -d
-Then check:
-
-Airflow UI: http://localhost:8080
-MinIO console: http://localhost:9001
-Streamlit: http://localhost:8501
-Credentials (from compose):
-
-MinIO: minioadmin / minioadmin
-Airflow user created at init: admin / admin
-2) Run ingestion
-In the Airflow UI, trigger the DAG:
-
-stock_price_pipeline
-That DAG runs the “fetch for each ticker → store Parquet into stock-raw” part.
-
-3) Run dbt transforms
-In current setup, run dbt manually in the dbt container:
-
-docker compose exec dbt dbt run
-Notes:
-
-docker compose exec dbt dbt test currently fails because your staging schema uses dbt_utils.accepted_range, but dbt_utils isn’t installed in the dbt container requirements.
-4) Use the dashboard
-Open:
-
-http://localhost:8501
-Important: with the current repo state, the Streamlit dashboard is likely to not show data because:
-
-dbt does not export Parquet into stock-transformed/mart_dashboard/ (it only builds tables inside DuckDB).
-dashboard/app.py has a bug: it calls load_data(ticker) but the function defined is load_transformed_data(...).
-So to “operate” the dashboard successfully, you’ll either need:
-
-an export step from DuckDB to stock-transformed Parquet, and/or
-to update the Streamlit app to query the DuckDB database directly (or whatever persistent store you choose).
-Files to look at (core logic)
-Ingestion DAG: dags/stock_pipeline.py
-dbt config: stock_transforms/dbt_project.yml, stock_transforms/profiles.yml, stock_transforms/macros/minio_secrets.sql
-dbt models:
-stock_transforms/models/staging/stg_prices.sql
-stock_transforms/models/intermediate/int_moving_averages.sql
-stock_transforms/models/marts/mart_dashboard.sql
-Dashboard: dashboard/app.py
+Usage:
+1. Run docker container: docker compose up -d
+2. Run Airflow job to ingest raw data into MinIO bucket:
+   - Go to Airflow Webserver at: localhost:8080/
+   - Run the Airflow jobs
+  
+3. Run data transformation with dbt:
+   - docker compose exec dbt dbt run
+  
+4. Check Streamlit dashboard:
+   - Go to localhost:8501 for Dashboard
