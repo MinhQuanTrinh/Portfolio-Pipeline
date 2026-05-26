@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import os
 
-st.set_page_config(page_title="ASX Stock Analytics", layout="wide", page_icon="📈")
+st.set_page_config(page_title="ASX Stock Analytics", layout="wide")
 
 DUCKDB_PATH = os.getenv("DUCKDB_PATH", "/tmp/stock.duckdb")
 

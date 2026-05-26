@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
-from plotply.subplots import make_subplots
+from plotly.subplots import make_subplots
 import duckdb, os
 
 st.set_page_config(page_title="Reverse DCF Model", layout="wide")
@@ -12,7 +12,7 @@ DUCKDB_PATH = os.getenv("DUCKDB_PATH", "/tmp/stock.duckdb")
 
 #Company Fundamentals
 #Sources: latest annual reports/Quarterly reports/ASX Fillings.
-FUNDAMENTAL_DATA = {
+FUNDAMENTALS = {
     "LDX.AX": {
         "name": "Lumos Diagnostics",
         "description": "Point-of-care diagnostics — rapid testing solutions",
